@@ -1,0 +1,1128 @@
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    cursor: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;      
+    margin:0;
+    padding:0;
+    width:100%; 
+    height:250vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+/* Define the custom cursor */
+.custom-ellipse {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    width: 550px;
+    height: 550px;
+    pointer-events: none;
+  }
+  
+  .custom-ellipse span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #87ffb7;
+    opacity: .7;
+    border-radius: 50%;
+    filter: blur(150px);
+  }
+  
+  .custom-ellipse2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    transition: width 0.3s ease, height 0.15s ease;
+  }
+  
+  .custom-ellipse2 span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.15s ease;
+  }
+  
+  .custom-ellipse2.custom-ellipse2-hover {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transform: translate(25%, 25%);
+  }
+  
+  .custom-ellipse2.custom-ellipse2-hover span {
+    background-color: #6052f5;
+  }
+
+
+#canvas {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index:0;
+    opacity:.65;
+}
+
+
+#back {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -100;
+    background-image: linear-gradient(210deg, rgb(40, 131, 251), rgb(220, 144, 255));
+}
+
+
+#buttonLanguage {
+    cursor: none;
+    position: absolute;
+    left:1.5%;
+    top:1.5vw;
+    height:2.5vw;  
+    width:16%;
+    background: rgba(211, 211, 211, 0);
+    border: none;
+    transform: perspective(1px) translateZ(0);
+    transition: color 0.3s;
+    z-index: 10;
+    color: #ffffff;
+    text-align: center;
+    padding-top: .2vw;
+    padding-bottom: .4vw;
+    font-family: "Poppins", sans-serif;
+    font-size:1.2vw;
+  } #buttonLanguage:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: #ffffff;
+    transform: scaleY(0);
+    transform-origin: 0 100%;
+    transition: transform 0.3s ease-out;
+  } #buttonLanguage:hover {
+    color: #6052f5;
+  } #buttonLanguage:hover:before {
+    transform: scaleY(1);
+  }
+
+
+  #buttonAbout {
+    cursor: none;
+    position: absolute;
+    left:82.5%;
+    top:1.5vw;
+    height:2.5vw;  
+    width:16%;
+    background: rgba(211, 211, 211, 0);
+    border: none;
+    transform: perspective(1px) translateZ(0);
+    transition: color 0.3s;
+    z-index: 10;
+    color: #ffffff;
+    text-align: center;
+    padding-top: .2vw;
+    padding-bottom: .4vw;
+    font-family: "Poppins", sans-serif;
+    font-size:1.2vw;
+  } #buttonAbout:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: #ffffff;
+    transform: scaleY(0);
+    transform-origin: 0 100%;
+    transition: transform 0.3s ease-out;
+  } #buttonAbout:hover {
+    color: #6052f5;
+  } #buttonAbout:hover:before {
+    transform: scaleY(1);
+  }
+
+
+  #buttonContact{
+    cursor: none;
+    position: absolute;
+    left:66.5%;
+    top:1.5vw;
+    height:2.5vw;  
+    width:16.1%;
+    background: rgba(211, 211, 211, 0);
+    border: none;
+    transform: perspective(1px) translateZ(0);
+    transition: color 0.3s;
+    z-index: 10;
+    text-align: center;
+    color: #ffffff;
+    padding-top: .2vw;
+    padding-bottom: .4vw;
+    font-family: "Poppins", sans-serif;
+    font-size:1.2vw;
+  } #buttonContact:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: #ffffff;
+    transform: scaleY(0);
+    transform-origin: 0 100%;
+    transition: transform 0.3s ease-out;
+  } #buttonContact:hover {
+    color: #6052f5;
+  } #buttonContact:hover:before {
+    transform: scaleY(1);
+  }
+
+
+.name{
+    position:absolute;
+    left: 50%;
+    top:7.5vw;
+    color: #ffffff;
+    font-size:7vw;
+    line-height: .9;
+    z-index: 2;
+    font-weight: 400;
+    letter-spacing: -.3vw;
+  }.name2{
+    position:absolute;
+    left: 50%;
+    top:13.5vw;
+    color: #ffffff;
+    font-size:7vw;
+    line-height: .9;
+    z-index: 2;
+    letter-spacing: -.3vw;
+    font-weight: 100;
+}
+
+.info{
+    position: absolute;
+    width:37vw;
+    left: 52.2vw;
+    top: 25vw;
+    font-size:1.2vw;
+    z-index: 2;
+    color: #ffffff;
+}
+
+#buttonPortfolio{
+    cursor: none;
+    position: absolute;
+    left: 52vw;
+    top:34.5vw;
+    padding-top:.6vw;
+    padding-bottom: .6vw;
+    background-color: #ffffffff;
+    color: rgb(73, 170, 255);
+    border: solid 1px;
+    transition-duration: 0.4s;
+    border-radius: 0;
+    font-size: 1.2vw;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    width:15vw;
+    border: none;
+    z-index: 2;
+}
+
+#buttonPortfolio:hover{
+    color: #6052f5;
+}
+
+
+
+/*----------------------------------------------*/
+/*------------------- RETICULA------------------*/
+/*----------------------------------------------*/
+
+.line1 {
+    position:absolute;
+    top:4vw;
+    left:1.5%;
+    height:0px;
+    width:1px;
+    border-top:2px solid #ffffff;
+    animation: increase 2s; 
+    animation-fill-mode: forwards;
+    z-index: 2;
+} @keyframes increase {
+    100% {
+        width: 97%;
+    }
+}
+
+.line2 {
+    position:absolute;
+    top:4vw;
+    left:1.5%;
+    height:0px;
+    width:1px;
+    border-left:2px solid #ffffff;
+    animation: increase2 .5s; 
+    animation-fill-mode: forwards;
+    z-index: 2;
+} @keyframes increase2 {
+    100% {
+        height: 2.5vw;
+        top:1.5vw;
+    }
+}
+
+.line3 {
+    position:absolute;
+    top:4vw;
+    left:17.5%;
+    height:0px;
+    width:1px;
+    border-left:2px solid #ffffff;
+    animation: increase3 .5s; 
+    animation-delay: .4s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+} @keyframes increase3 {
+    100% {
+        height: 2.5vw;
+        top:1.5vw;
+    }
+}
+
+.line4 {
+    position:absolute;
+    top:4vw;
+    left:66.5%;
+    height:0px;
+    width:1px;
+    border-left:2px solid #ffffff;
+    animation: increase4 .5s; 
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+} @keyframes increase4 {
+    100% {
+        height: 2.5vw;
+        top:1.5vw;
+    }
+}
+
+.line5 {
+    position:absolute;
+    top:4vw;
+    left:82.5%;
+    height:0px;
+    width:1px;
+    border-left:2px solid #ffffff;
+    animation: increase5 .5s; 
+    animation-delay: 1.3s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+} @keyframes increase5 {
+    100% {
+        height: 2.5vw;
+        top:1.5vw;
+    }
+}
+
+.line6 {
+    position:absolute;
+    top:4vw;
+    left:98.4%;
+    height:0px;
+    width:1px;
+    border-left:2px solid #ffffff;
+    animation: increase6 .5s; 
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+} @keyframes increase6 {
+    100% {
+        height: 2.5vw;
+        top:1.5vw;
+    }
+}
+
+.line7 {
+    position:absolute;
+    top:23vw;
+    left:50%;
+    height:0px;
+    width:1px;
+    border-top:2px solid #ffffff;
+    animation: increase7 2s; 
+    animation-fill-mode: forwards;
+    z-index: 2;
+} @keyframes increase7 {
+    100% {
+        width: 48.5%;
+    }
+}
+
+#line8 {
+    position:absolute;
+    top:23vw;
+    left:50%;
+    height:0px;
+    width:1px;
+    border-left:2px solid #ffffff;
+    animation: increase8 .5s; 
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+} 
+
+.line9 {
+    position:absolute;
+    top:32vw;
+    left:50%;
+    height:0px;
+    width:0px;
+    border-bottom:2px solid #ffffff;
+    animation: increase9 1.6s;
+    animation-delay: .8s; 
+    animation-fill-mode: forwards;
+    z-index: 2;
+} @keyframes increase9 {
+    100% {
+        width: 48.5%;
+    }
+}
+
+#dot1 {
+    height: 1.5vw;
+    width: 1.5vw;
+    align-self: center;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position:absolute;
+    margin-left: -0.70%;
+    left:50%;
+    top:39vw;
+    z-index: 2;
+  }
+
+
+
+/*------------------- Ultrawide ------------------*/
+
+@media only screen and (min-width: 1800px) {
+
+    .name{
+        width: 100%;
+        font-size:5.5vw;
+        top:7.5vw;
+    }.name2{
+        width: 100%;
+        font-size:5.5vw;
+        top:12.5vw;
+    }
+
+    #buttonLanguage {
+        font-size:.9vw;
+    } #buttonAbout {
+        font-size:.9vw;
+    } #buttonContact{
+        font-size:.9vw;
+    }
+
+    .info{
+        font-size: .9vw;
+        width:28vw;
+        top: 23.5vw;
+    } .buttonPortfolio{
+        font-size:.9vw;
+        top: 32.5vw;
+    }
+
+    .line7 {
+        top:21vw;
+    }#line8 {
+        top:21vw;
+    }.line9{
+        top:30vw;
+    }
+
+}
+
+
+/*------------------- Vertical ------------------*/
+
+@media screen and (orientation:portrait) {
+
+    .line1 {
+        top:6vw;
+        left:2.5%;
+        height:0px;
+    } @keyframes increase {
+        100% {
+            width: 95%;
+        }
+    }    
+
+    .line2 {
+        top:2.5vw;
+        left:2.5%;
+        height:0px;
+    } @keyframes increase2 {
+        100% {
+            height: 3.5vw;
+            top:2.5vw;
+        }
+    }
+
+    .line3 {
+        top:2.5vw;
+        left:21.5%;
+        height:0px;
+    } @keyframes increase3 {
+        100% {
+            height: 3.5vw;
+            top:2.5vw;
+        }
+    }
+
+    .line4 {
+        top:2.5vw;
+        left:59.5%;
+        height:0px;
+    } @keyframes increase4 {
+        100% {
+            height: 3.5vw;
+            top:2.5vw;
+        }
+    }
+
+    .line5 {
+        top:2.5vw;
+        left:78.5%;
+        height:0px;
+    } @keyframes increase5 {
+        100% {
+            height: 3.5vw;
+            top:2.5vw;
+        }
+    }
+
+    .line6 {
+        top:2.5vw;
+        left:97.5%;
+        height:0px;
+    } @keyframes increase6 {
+        100% {
+            height: 3.5vw;
+            top:2.5vw;
+        }
+    }
+
+    .line7 {
+        top:37vw;
+        left:2.5%;
+        height:0px;
+    } @keyframes increase7 {
+        100% {
+            width: 95%;
+        }
+    }    
+        
+    #line8 {
+        top:37vw;
+        left:21.5%;
+        height:0px;
+        width:1px;
+    } 
+
+    .line9 {
+        top:55vw;
+        left:21.5%;
+        height:0px;
+        width:0px;
+    } @keyframes increase9 {
+        100% {
+            width: 76%;
+        }
+    }
+
+    #dot1 {
+        height:3vw;
+        width: 3vw;
+        left:20.9%;
+    }
+
+    #buttonLanguage {
+        left:2.5%;
+        top:2.5vw;
+        height:3.55vw;  
+        width:19%;
+        padding-top: .2vw;
+        padding-bottom: .4vw;
+        font-size:1.75vw;
+      }
+
+    #buttonContact{
+        left:59.5%;
+        top:2.5vw;
+        height:3.55vw;  
+        width:19.5%;
+        padding-top: .2vw;
+        padding-bottom: .4vw;
+        font-size:1.75vw;
+    }  
+
+    #buttonAbout{
+        left:78.5%;
+        top:2.5vw;
+        height:3.55vw;  
+        width:19%;
+        padding-top: .2vw;
+        padding-bottom: .4vw;
+        font-size:1.75vw;
+    }  
+
+
+    .name{
+        font-size:9vw;
+        top:13vw;
+        left: 21.5%;
+    }.name2{
+        font-size:9vw;
+        top:22vw;
+        left:21.5%;
+    }
+
+    .info{
+        font-size: 1.7vw;
+        width:55vw;
+        top: 42vw;
+        left:26%;
+    }
+
+    .buttonPortfolio{
+        left: 26%;
+        top:85vh;
+        padding-top:.6vw;
+        padding-bottom: .6vw;
+        font-size: 2vw;
+        width:25vw;
+    }
+ }
+ 
+
+
+ /*---------------- Mobile - Vertical ---------------*/
+ @media only screen and (max-width: 480px){
+
+    .name{
+        font-size:12vw;
+        top: 20vw;
+        left: 7%;
+    }.name2{
+        font-size:12vw;
+        top:31vw;
+        left:7%;
+    }
+
+    .line1{
+        top: 12vw;
+        left: 7%;
+    }  @keyframes increase {
+        100% {
+            width: 86%;
+        }
+    }
+
+    .line7{
+        top: 50vw;
+        left: 7%;
+    }  @keyframes increase7 {
+        100% {
+            width: 86%;
+        }
+    }
+
+    #line8{
+        top: 12vw;
+        left: 93%;
+    }
+
+    .line9{
+        top: 81vh;
+        left: 7%;
+    }  @keyframes increase9 {
+        100% {
+            width: 86%;
+        }
+    }
+
+    .info{
+        left: 7%;
+        top: 59vw;
+        font-size:3.5vw;
+        width: 70vw;
+        font-weight: 200;
+    }
+
+    #dot1 {
+        height:6vw;
+        width: 6vw;
+        left:90.6%;
+    }
+
+    .buttonPortfolio{
+        left: 52%;
+        top:85vh;
+        padding-top:.6vw;
+        padding-bottom: .6vw;
+        font-size: 3.7vw;
+        width:35%;
+    }
+
+    #buttonLanguage {
+        left:6%;
+        top:4vw;
+        height:6vw;  
+        width:34vw;
+        padding-top: 0vw;
+        padding-bottom: 0vw;
+        font-size:3.3vw;
+        font-weight: 600;
+        text-align: left;
+    }   #buttonLanguage:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background:none;
+        transform: none;
+        transform-origin: none;
+        transition: none;
+      } #buttonLanguage:hover {
+        color: rgb(0, 0, 255);
+      } #buttonLanguage:hover:before {
+        transform: scaleY(1);
+      }
+
+  
+
+    #buttonAbout{
+        display:none
+    } #buttonContact{
+        display:none
+    } .line2{
+        display:none 
+    } .line3{
+        display:none 
+    } .line4{
+        display:none 
+    } .line5{
+        display:none 
+    } .line6{
+        display:none 
+    }
+
+ }
+
+
+
+
+
+
+
+/*----------------------------------------------*/
+/*------------------ Portafolio-----------------*/
+/*----------------------------------------------*/
+
+
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+  }
+
+
+  @media screen and (orientation:landscape) {
+
+    #myH1{
+        font-size: 2vw;
+        font-weight: 600;
+        color:#6052f5;
+    }
+    
+    #myH2{
+        font-size: 2vw;
+        font-weight: 600;
+        color: #6052f5;
+    }
+    
+    #myH3{
+        font-size: 2vw;
+        font-weight: 600;
+        color: #6052f5;
+    }
+    
+    
+    #myG1{
+        font-size:1.2vw;
+        font-weight: 400;
+        color: #323232;
+    }
+    
+    #myG2{
+        font-size:1.2vw;
+        font-weight: 400;
+        color: #323232;
+    }
+    
+    #myG3{
+        font-size:1.2vw;
+        font-weight: 400;
+        color: #323232;
+    }    
+
+ #card1{
+    position:absolute;
+    top:110vh;
+    left: 0;
+    width: 43%;
+    height: 50vh;
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    background-color: rgb(250, 250, 250);
+    border-radius: 0px 2vw 2vw 0px;
+    text-align: right;
+    padding-right: 3%;
+    padding-top: 3vw;
+    line-height: .4;
+}
+
+
+#card2{
+    position:absolute;
+    top:145vh;
+    width: 43%;
+    height: 50vh;
+    z-index: 10;
+    right: 0;
+    backdrop-filter: blur(70px);
+    background-color: rgb(250, 250, 250);
+    border-radius: 2vw 0vw 0vw 2vw;
+    text-align: left;
+    padding-left: 3%;
+    padding-top: 3vw;
+    line-height: .4;
+}
+
+#card3{
+    position:absolute;
+    top:110vh;
+    width: 43%;
+    height: 50vh;
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    background-color: rgb(250, 250, 250);
+    border-radius: 0px 2vw 2vw 0px;
+    text-align: right;
+    padding-right: 3%;
+    padding-top: 3vw;
+    line-height: .4;
+}
+
+#vid1{
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 1vw 1vw 1vw 1vw;
+    margin-bottom: 1vw;
+}
+
+#vid2{
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 1vw 1vw 1vw 1vw;
+    margin-bottom: 1vw;
+}
+
+#vid3{
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 1vw 1vw 1vw 1vw;
+    margin-bottom: 1vw;
+}
+}
+
+/*------------------- Vertical ------------------*/
+
+@media screen and (orientation:portrait) {
+
+    #myH1{
+        font-size: -1vw;
+        font-weight: 600;
+        color: #4083ff;
+    }
+    
+    #myH2{
+        font-size: -1vw;
+        font-weight: 600;
+        color: #4083ff;
+    }
+    
+    #myH3{
+        font-size: -1vw;
+        font-weight: 600;
+        color: #4083ff;
+    }
+    
+    
+    #myG1{
+        font-size:2vw;
+        font-weight: 400;
+        color: #323232;
+        line-height: 2.5;
+    }
+    
+    #myG2{
+        font-size:2vw;
+        font-weight: 400;
+        color: #323232;
+        line-height: 2.5;
+    }
+    
+    #myG3{
+        font-size:2vw;
+        font-weight: 400;
+        color: #323232;
+        line-height: 2.5;
+    }
+
+    #card1{
+        z-index: 10;
+        background-color: rgb(250, 250, 250);
+        position: absolute;
+        width: 53%;
+        height: 35vh;
+        border-radius: 4vw 0vw 0vw 4vw;
+        text-align: left;
+        padding-left: 3%;
+        right: 0;
+        left: none;
+    }
+
+    #card2{
+        z-index: 10;
+        position: absolute;
+        background-color: rgb(250, 250, 250);
+        width: 53%;
+        height: 35vh;
+        border-radius: 4vw 0vw 0vw 4vw;
+        text-align: left;
+        padding-left: 3%;
+        right: 0;
+    }
+
+    #card3{
+        z-index: 10;
+        position: absolute;
+        background-color: rgb(250, 250, 250);
+        width: 53%;
+        height: 35vh;
+        border-radius: 4vw 0vw 0vw 4vw;
+        text-align: left;
+        padding-left: 3%;
+        right: 0;
+        left: none;
+    }
+
+    #vid1{
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 1.5vw 1.5vw 1.5vw 1.5vw;
+    }
+    
+    #vid2{
+        object-fit: cover;
+         overflow: hidden;
+        border-radius: 1.5vw 1.5vw 1.5vw 1.5vw;
+    }
+    
+    #vid3{
+        object-fit: cover;
+     overflow: hidden;
+        border-radius: 1.5vw 1.5vw 1.5vw 1.5vw;
+    }
+
+    #myH1{
+        font-size: 3vw;
+        font-weight: 600;
+    }
+
+    #myH2{
+        font-size: 3vw;
+        font-weight: 600;
+    }
+
+    #myH3{
+        font-size: 3vw;
+        font-weight: 600;
+    }
+    
+    #myG1{
+        font-size:1.85vw;
+        font-weight: 400;
+    }
+
+    #myG2{
+        font-size:1.85vw;
+        font-weight: 400;
+    }
+
+    #myG3{
+        font-size:1.85vw;
+        font-weight: 400;
+    }
+}
+
+
+/*---------------- Mobile - Vertical ---------------*/
+@media only screen and (max-width: 480px){
+
+    #card1{
+        position: absolute;
+        left: 0;
+        right: none;
+        width: 73%;
+        height: 37vh;
+        border-radius: 0vw 4vw 4vw 0vw;
+        text-align: right;
+        padding-right: 7.5%;
+        padding-top: 7.5vw;
+    }
+
+    #card2{
+        position: absolute;
+        left: 0;
+        right: none;
+        width: 73%;
+        height: 37vh;
+        border-radius: 0vw 4vw 4vw 0vw;
+        text-align: right;
+        padding-right: 7.5%;
+        padding-top: 7.5vw;
+    }
+
+    #card3{
+        position: absolute;
+        left: 0;
+        right: none;
+        width: 73%;
+        height: 37vh;
+        border-radius: 0vw 4vw 4vw 0vw;
+        text-align: right;
+        padding-right: 7.5%;
+        padding-top: 7.5vw;
+    }
+
+    #vid1{ 
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 2vw 2vw 2vw 2vw;
+    }
+    
+    #vid2{
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 2vw 2vw 2vw 2vw;
+    }
+    
+    #vid3{
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 2vw 2vw 2vw 2vw;
+    }
+
+    #myH1{
+        font-size: 5vw;
+        font-weight: 600;
+    }
+
+    #myH2{
+        font-size: 5vw;
+        font-weight: 600;
+    }
+    
+    #myH3{
+        font-size: 5vw;
+        font-weight: 600;
+    }
+
+    #myG1{
+        font-size:3.4vw;
+        font-weight: 400;
+    }
+
+    #myG2{
+        font-size:3.4vw;
+        font-weight: 400;
+    }
+
+    #myG3{
+        font-size:3.4vw;
+        font-weight: 400;
+    }
+}
+
+/*----------------------------------------------*/
+/*-----------------LET'S WORK-------------------*/
+/*----------------------------------------------*/
+
+
+#letsWork{
+        position:absolute;
+        font-size:7vw;
+        font-weight: 600;
+        z-index: 50;
+        top: 160vw;
+        color: #FFF;
+        width: 50vw;
+        right:25vw;
+        text-align: center;
+        letter-spacing: -.3vw;
+        height: 25vw;
+    }
+
+/*------------------- Ultrawide ------------------*/
+
+@media only screen and (min-width: 1800px) {
+
+#letsWork{
+    color: #FFF;
+    }
+}

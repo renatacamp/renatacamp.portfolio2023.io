@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Renata Campuzano</title>
+<link rel="stylesheet" href="main.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+</head>
+<body>
+
+
+<!----- THREE ----->
+<script type="importmap">
+  {
+    "imports": {
+      "three": "/three/build/three.module.js",
+      "GLTFLoaderPath": "/three/examples/jsm/loaders/GLTFLoader.js",
+      "RGBELoaderPath": "/three/examples/jsm/loaders/RGBELoader.js",
+      "OrbitControlsPath": "/three/examples/jsm/controls/OrbitControls.js"
+    }
+  }
+</script>
+<!------<script src='three/build/three.js' type="module"></script>------> 
+<script src="sketchThree.js" type="module"></script>
+<div id="canvas"></div>
+<!------ P5 ------> 
+<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+<script src="sketchP5.js"></script>
+
+
+
+<!----- HTML -----> 
+<div id="back"></div>
+
+<button id="buttonLanguage" class="color-change-button">English / Español</button>
+<button id="buttonContact" class="color-change-button">Contact</button>
+<button id="buttonAbout" class="color-change-button">About me</button>
+
+<div class="name">Renata</div>
+<div class="name2">Campuzano</div>
+<div class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus nibh nec rhoncus pharetra. Integer dignissim lacinia est et tincidunt. Nunc a elit in libero blesus.</div>
+<button id="buttonPortfolio" class="color-change-button">Portfolio</button>
+
+<div class="line1"></div>
+<div class="line2"></div>
+<div class="line3"></div>
+<div class="line4"></div>
+<div class="line5"></div>
+<div class="line6"></div>
+<div class="line7"></div>
+<div id="line8"></div>
+<div class="line9"></div>
+<div id="dot1"></div>
+<div id="card1" class="color-change-button" onclick="window.location.href='belive.html'">
+        <img id="vid1" src="assets/images/be+live.jpg"></img>
+    <div id = "myH1">Be+Live</div>
+    <div id = "myG1">3D Render - Branding - Identity</div>
+</div>
+<div id="card2" class="color-change-button">
+  <img id="vid2" src="assets/images/mixed2.png"></img>
+    <div id = "myH2">Mixed</div>
+    <div id = "myG2">3D Render - Branding - Identity</div>
+</div>
+<div id="card3" class="color-change-button">
+  <video id="vid3" autoplay muted loop>
+    <source src="assets/videos/getty.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+<div id = "myH3">Be+Live</div>
+<div id = "myG3">lorem ipsum - dolor sit - amet cosect</div>
+</div>
+<div id = "letsWork">LET'S WORK</div> 
+
+
+<script src="main.js"></script>
+
+<div class="custom-ellipse">
+  <span></span>
+</div>
+<div class="custom-ellipse2">
+  <span></span>
+</div>
+
+<script>
+  const cursor = document.querySelector(".custom-ellipse");
+  const cursor2 = document.querySelector(".custom-ellipse2");
+  const colorChangeButtons = document.querySelectorAll(".color-change-button");
+  
+  colorChangeButtons.forEach(button => {
+    button.addEventListener("mouseover", function() {
+      cursor2.classList.add("custom-ellipse2-hover");
+    });
+  
+    button.addEventListener("mouseout", function() {
+      cursor2.classList.remove("custom-ellipse2-hover");
+    });
+  });
+  
+  function updateCursorPosition(event) {
+    cursor.style.left = event.clientX + "px";
+    cursor.style.top = event.clientY + "px";
+  
+    cursor2.style.left = event.clientX + "px";
+    cursor2.style.top = event.clientY + "px";
+  }
+  
+  document.addEventListener("mousemove", updateCursorPosition);
+  </script>
+</body>
+</html>

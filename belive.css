@@ -1,0 +1,1124 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  cursor: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  margin: 0;
+  width: 100%;
+  height: 250vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  background-color: #E3D1C3;
+}
+
+/* Define the custom cursor */
+.custom-ellipse2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  transition: width 0.3s ease, height 0.15s ease;
+}
+
+.custom-ellipse2 span {
+  cursor: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #99268F;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.15s ease;
+}
+
+.custom-ellipse2.custom-ellipse2-hover {
+  cursor: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  transform: translate(25%, 25%);
+}
+
+.custom-ellipse2.custom-ellipse2-hover span {
+  background-color: #99268F;
+}
+
+#buttonback {
+  cursor: none;
+  height: 40px;
+  width: 140px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: none;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: fixed;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/*--------------------Header-------------------- */
+
+#header {
+  width: 80vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  object-fit: cover;
+  overflow: hidden;
+  z-index: -10;
+  content: url("assets/images/beLive/header.jpg"); /* Default desktop image */
+}
+
+#headerOverlay {
+  position: fixed;
+  height: 110vh;
+  width: 50vw;
+  left: 50vw;
+  top: 0;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.778));
+  z-index: -9;
+}
+
+#headerOverlay2 {
+  position: absolute;
+  height: 600px;
+  width: 100%;
+  left: 0vw;
+  top: 500px;
+  background-image: linear-gradient(180deg, rgba(2, 2, 2, 0), rgba(155, 131, 95, 0.567));
+  z-index: -7;
+}
+
+#logo {
+  width: 35vw;
+  top: 30vh;
+  left: 55vw;
+  position: fixed;
+  object-fit: contain;
+  z-index: -8;
+}
+
+
+/*----------------Infromation----------------- */
+
+#info {
+  height: 320px;
+  width: 98%;
+  background-color: #ffffff;
+  z-index: 2;
+  top: 710px;
+  left: 1%;
+  position: absolute;
+  border-radius: 2vw;
+}
+
+hr.line1 {
+  display: none;
+}
+
+#back {
+  height: 4500px;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: -1;
+  top: 1050px;
+  left: 0;
+  position: absolute;
+}
+
+.infoTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 200;
+  color: #bd32b1;
+}
+
+.infoInfo {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+}
+
+#clientInfo {
+  float: right;
+  right: 50vw;
+  top: 75px;
+  position: absolute;
+  z-index: 10;
+  line-height: 1.3;
+  width: 555px;
+}
+
+#servicesInfo {
+  top: 185px;
+  float: right;
+  right: 50vw;
+  width: 555px;
+  position: absolute;
+  z-index: 10;
+  line-height: 1.3;
+}
+
+#dateInfo {
+  top: 75px;
+  float: right;
+  right: 50vw;
+  width: 342px;
+  position: absolute;
+  z-index: 10;
+  line-height: 1.3;
+}
+
+#overviewInfo {
+  top: 75px;
+  left: 50vw;
+  width: 558px;
+  position: absolute;
+  z-index: 10;
+  line-height: 1.75;
+}
+
+
+/*----------------Introducción----------------- */
+
+#introBlock {
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 100px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#imageContainer {
+  width: 768px;
+}
+
+#carrusel {
+  width: 100%;
+  border-radius: 25px;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+#carrusel2 {
+  width: 100%;
+  border-radius: 25px;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+#textContainer {
+  width: 300px;
+  padding-left: 84px;
+}
+
+#introText {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+
+/*----------------Banners----------------- */
+
+#bannersImgBlock {
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 640px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#imageContainer2 {
+  width: 1152px;
+}
+
+
+/*-------- Introduccion Brandbook------------ */
+
+#BBintroBlock {
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 100px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#BbIntroBlock {
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 1400px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#introText3 {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+#BbTitle {
+  font-size: 50px;
+  width: 384px;
+  padding-bottom: 65px;
+  font-weight: 200;
+  color: #bd32b1;
+}
+
+#textContainer3 {
+  width: 768px;
+}
+
+
+/*---------------- Brandbook-------------- */
+
+#BbBlock {
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 1600px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#BbContainer {
+  width: 1920px;
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+}
+
+#brandbook,
+#brandbook2,
+#brandbook3,
+#brandbook4,
+#brandbook5,
+#brandbook6,
+#brandbook0 {
+  width: 100%;
+  position: absolute;
+  transition: opacity 1.5s;
+}
+
+#brandbook2,
+#brandbook3,
+#brandbook4,
+#brandbook5,
+#brandbook6,
+#brandbook0 {
+  opacity: 0;
+}
+
+#BbBack {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 1600px;
+  background-color: #e7d7c2;
+  height: 660px;
+  z-index: -15;
+}
+
+#prevButton,
+#nextButton {
+  position: absolute;
+  z-index: 100;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: rgb(255, 255, 255);
+  border: none;
+  cursor: none;
+  border-radius: 25px;
+  height: 40px;
+  width: 40px;
+}
+
+#prevButton {
+  left: 275px;
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #bd32b1;
+  padding-right: 15px;
+}
+
+#prevButton:hover {
+  background-color: #786b5a;
+  color: #ffffff;
+}
+
+#nextButton {
+  right: 275px;
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #bd32b1;
+  font-weight: 400;
+  padding-left: 10px;
+}
+
+#nextButton:hover {
+  background-color: #786b5a;
+  color: #ffffff;
+}
+
+
+
+/*---------------- Laptop-------------- */
+
+#laptopImgBlock {
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 2400px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#imageContainer3 {
+  width: 1152px;
+}
+
+#laptop {
+  width: 100%;
+  border-radius: 25px;
+}
+
+
+/*---------------- Papelería -------------- */
+
+#papeleriaBlock {
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 3200px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#papeleriaContainer {
+  width: 1350px;
+  height: 800px;
+}
+
+#papeleria {
+  width: 100%;
+}
+
+#papeleriaBack {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 3200px;
+  background-color: #e7d7c2;
+  height: 655px;
+  z-index: -15;
+}
+
+
+
+
+
+@media only screen and (max-width: 1400px) {
+
+  .custom-ellipse2 {
+  width: .75vw;
+  height: .75vw;
+}
+
+/*----------------Infromation----------------- */
+
+  #info {
+  top: 50vw;
+  height:27vw;
+  }
+
+  .infoTitle {
+  font-size:1.7vw;
+  }
+
+  .infoInfo {
+  font-size:1.3vw;
+  }
+
+  #back {
+  height:300vw;
+  width: 100%;
+  top: 78vw;
+  }
+
+  #clientInfo {
+  right: 50vw;
+  top: 7vw;
+  width: 38.5vw;
+  }
+
+  #servicesInfo {
+  top: 13.8vw;
+  right: 50vw;
+  width: 38.5vw;
+  }
+
+  #dateInfo {
+  top: 7vw;
+  right: 50vw;
+  width: 20.5vw;
+  }
+
+  #overviewInfo {
+  top: 7vw;
+  left: 47vw;
+  width: 43vw;
+  }
+
+  
+/*----------------Introducción----------------- */
+
+  #introBlock {
+  top: 8.5vw !important;
+  }
+
+  #imageContainer {
+  width: 50vw;
+  }
+
+  #carrusel {
+  width: 100%;
+  border-radius: 25px;
+  }
+
+  #carrusel2 {
+  width: 100%;
+  border-radius: 25px;
+  }
+
+  #textContainer {
+  width: 25vw;
+  padding-left:5vw;
+  }
+
+  #introText {
+  font-size: 1.3vw;
+  padding-bottom: 1vw;
+  }
+
+
+/*----------------Banner----------------- */
+
+  #bannersImgBlock {
+  top: 45vw !important;
+  }
+
+  #imageContainer2 {
+  width: 80vw;
+  }
+
+  
+
+/*------Introducción Brandbook------- */
+
+  #BbIntroBlock {
+  top: 97vw;
+  }
+
+  #introText3 {
+  font-size: 1.4vw;
+  }
+
+  #BbTitle {
+  font-size: 4.5vw;
+  width: 30vw;
+  padding-bottom: 6vw; 
+  }
+
+  #textContainer3 {
+  width: 50vw; 
+  }
+
+
+/*-------------Brandbook------------- */
+
+  #BbBlock {
+  top: 115vw;
+  }
+
+  #BbContainer {
+  width: 135vw;
+  }
+
+  #brandbook {
+  width: 100%;
+  }
+
+  #BbBack {
+  display: none ;
+  }
+
+  #prevButton,
+#nextButton {
+  top: 23vw;
+  border-radius: 2vw;
+  height: 3vw;
+  width: 3vw;
+}
+
+#prevButton {
+  left: 21vw;
+  font-size: 1.5vw;
+  padding-right: .75vw;
+}
+
+#nextButton {
+  right: 21vw;
+  font-size: 1.5vw;
+  padding-left: .75vw;
+}
+
+  
+/*----------------Laptop----------------- */
+
+  #laptopImgBlock {
+  top: 170vw;
+  }
+
+  #imageContainer3 {
+  width: 80vw;
+  }
+
+  #laptop {
+  width: 100%;
+  border-radius: 25px;
+  }
+
+
+/*-------------Papeleria-------------- */
+
+  #papeleriaBlock {
+  top: 225vw;
+  }
+
+  #papeleriaContainer {
+  width: 100vw;
+  }
+
+  #papeleria{
+  width: 100%;
+  }
+
+  #papeleriaBack {
+  display: none;
+  }
+}
+
+
+
+
+@media screen and (orientation:portrait) {
+
+/*--------------------Header-------------------- */
+
+#headerOverlay{
+height:100vh;
+width: 50vw;
+left: 50vw;
+}
+
+#headerOverlay2{
+height:65vw;
+width: 100vw;
+left: 0vw;
+top: 70vw;
+}
+
+/*----------------Infromation----------------- */
+
+  #info {
+  top: 87vw;
+  height:45vw;
+  width: 97%;
+  left: 1.5%;
+  }
+
+  .infoTitle {
+  font-size:18px;
+  }
+
+  .infoInfo {
+  font-size:1.6vw;
+  }
+
+  hr.line1 {
+  display: flex;
+  position: relative;
+  width: 80%;
+  top: 16vw;
+  border: 1px solid #bd32b1;
+  }
+
+  #back {
+  height:500vw;
+  width: 100%;
+  top: 134.5vw;
+  }
+
+  #clientInfo {
+  right: 10%;
+  top: 9vw;
+  width: 80%;
+  }
+
+  #servicesInfo {
+  top: 9vw;
+  right: 0vw;
+  width: 50vw;
+  }
+
+  #dateInfo {
+  top: 9vw;
+  right: 0vw;
+  width: 65vw;
+  }
+
+  #overviewInfo {
+  top: 23vw;
+  left: 10%;
+  width: 80%;
+  }
+
+/*----------------Introducción----------------- */
+
+  #introBlock {
+    left: 10%;
+    transform: translate(0, 0);
+    position:absolute;
+    top: 10vw !important;
+  }
+
+  #imageContainer {
+  width: 100%;
+  }
+
+  #carrusel {
+  width: 80vw;
+  border-radius: 25px;
+  }
+
+  #carrusel2 {
+  width: 80vw;
+  border-radius: 25px;
+  }
+
+  #textContainer {
+    position: absolute;
+    left:0vw;
+    float: left;
+    width: 80vw;
+    top: 53vw;
+    padding-left:0vw;
+  }
+
+  #introText {
+  font-size: 1.6vw;
+  padding-bottom: 1vw;
+  }
+
+
+  /*----------------Banner----------------- */
+
+  #bannersImgBlock {
+  top: 82vw !important;
+  }
+
+  #imageContainer2 {
+  width: 80vw;
+  }
+
+  /*------Introducción Brandbook------- */
+
+  #BbIntroBlock {
+  top: 138vw;
+  }
+
+  #introText3 {
+  font-size: 1.6vw;
+  }
+
+  #BbTitle {
+  font-size: 4.5vw;
+  width: 30vw;
+  padding-bottom: 12vw; 
+  }
+
+  #textContainer3 {
+  width: 50vw; 
+  }
+
+  /*-------------Brandbook------------- */
+
+  #BbBlock {
+  top: 164vw;
+  }
+
+  #BbContainer {
+  width: 135vw;
+  }
+
+  #brandbook {
+  width: 100%;
+  }
+
+  #BbBack {
+  display: none ;
+  }
+
+  #prevButton,
+#nextButton {
+  top: 23vw;
+  border-radius: 2vw;
+  height: 3vw;
+  width: 3vw;
+}
+
+#prevButton {
+  left: 21vw;
+  font-size: 1.5vw;
+  padding-right: .75vw;
+}
+
+#nextButton {
+  right: 21vw;
+  font-size: 1.5vw;
+  padding-left: .75vw;
+}
+
+  
+/*----------------Laptop----------------- */
+
+  #laptopImgBlock {
+  top: 220vw;
+  }
+
+  #imageContainer3 {
+  width: 80vw;
+  }
+
+  #laptop {
+  width: 100%;
+  border-radius: 25px;
+  }
+
+
+/*-------------Papeleria-------------- */
+
+  #papeleriaBlock {
+  top: 278vw;
+  }
+
+  #papeleriaContainer {
+  width: 100vw;
+  }
+
+  #papeleria{
+  width: 100%;
+  }
+
+  #papeleriaBack {
+  display: none;
+  }
+
+
+
+}
+
+
+
+
+@media only screen and (max-width: 480px) {
+  
+   html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  /*--------------------Header-------------------- */
+
+  #header {
+  content: url("assets/images/beLive/headerMobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  }
+
+  #headerOverlay {
+    background-image: linear-gradient(180deg, rgba(2, 2, 2, 0), #E3D1C3);
+    height: 32vw;
+    width: 100vw;
+    left: 0vw;
+    top: 130vw;
+  }
+
+  #headerOverlay2 {
+    height: 220vw;
+    width: 100vw;
+    left: 0vw;
+    top: 70vw;
+  }
+
+  #logo {
+  display: none;
+}
+
+  /*----------------Infromation----------------- */
+
+  #info {
+    top: 145vw;
+    height: 128vw;
+    width: 95%;
+    left: 2.5%;
+  }
+
+  .infoTitle {
+    font-size: 5vw;
+  }
+
+  .infoInfo {
+    font-size: 3.4vw;
+  }
+
+  hr.line1 {
+    display: flex;
+    position: relative;
+    width: 80%;
+    top: 46vw;
+    border: 1px solid #bd32b1;
+  }
+
+  #back {
+    height: 650vw;
+    width: 100%;
+    top: 276vw;
+  }
+
+  #clientInfo {
+    right: 10%;
+    top: 9vw;
+    width: 80%;
+  }
+
+  #servicesInfo {
+    top: 27vw;
+    float: left;
+    left: 10%;
+    width: 80%;
+  }
+
+  #dateInfo {
+    top: 9vw;
+    right: 0vw;
+    width: 23vw;
+  }
+
+  #overviewInfo {
+    top: 60vw;
+    left: 10%;
+    width: 80%;
+  }
+
+  /*----------------Introducción----------------- */
+
+  #introBlock {
+    left: 10%;
+    transform: translate(0, 0);
+    position: absolute;
+    top: 22vw !important;
+  }
+
+  #imageContainer {
+    width: 100%;
+  }
+
+  #carrusel {
+    width:80vw;
+    border-radius: 3vw;
+    right:5vw;
+  }
+
+  #carrusel2 {
+    width:100%;
+    border-radius: 3vw;
+    right:5vw;
+  }
+
+  #textContainer {
+    position: absolute;
+    left: 0vw;
+    float: left;
+    width: 80vw;
+    top: 65vw;
+    padding-left: 0vw;
+  }
+
+  #introText {
+    font-size: 3.4vw;
+    padding-bottom: 1vw;
+  }
+
+
+  /*----------------Banner----------------- */
+
+  #bannersImgBlock {
+    top: 144vw !important;
+    width: 80vw !important;
+  }
+
+  #imageContainer2 {
+    width: 80vw;
+  }
+
+  /*------Introducción Brandbook------- */
+
+  #BbIntroBlock {
+    top: 217vw;
+  }
+
+  #introText3 {
+    position: absolute;
+    left: 0vw;
+    font-size: 3.4vw;
+    top: 15vw;
+  }
+
+  #BbTitle {
+    font-size: 10vw;
+    width: 30vw;
+    padding-bottom: 12vw;
+  }
+
+  #textContainer3 {
+    width: 50vw;
+  }
+
+  /*-------------Brandbook------------- */
+
+  #BbBlock {
+    top: 284vw;
+  }
+
+  #BbContainer {
+    width: 135vw;
+  }
+
+  #brandbook {
+    width: 100%;
+  }
+
+  #BbBack {
+    display: none;
+  }
+
+  #prevButton,
+  #nextButton {
+    top: 49vw;
+    border-radius: 5vw;
+    height: 8vw;
+    width: 10vw;
+  }
+
+  #prevButton {
+    left: 7vw;
+    font-size: 4vw;
+    padding-right: 2vw;
+  }
+
+  #nextButton {
+    right: 7vw;
+    font-size: 4vw;
+    padding-left: 2vw;
+  }
+
+  
+  /*----------------Laptop----------------- */
+
+  #laptopImgBlock {
+    top: 365vw;
+  }
+
+  #imageContainer3 {
+    width: 80vw;
+  }
+
+  #laptop {
+    width: 100%;
+    border-radius: 3vw;
+  }
+
+
+  /*-------------Papeleria-------------- */
+
+  #papeleriaBlock {
+    top: 452vw;
+  }
+
+  #papeleriaContainer {
+    width: 100vw;
+  }
+
+  #papeleria {
+    width: 100%;
+  }
+
+  #papeleriaBack {
+    display: none;
+  }
+
+
+  
+  #info,
+  #back,
+  #servicesInfo,
+  #dateInfo,
+  #overviewInfo,
+  #introBlock,
+  #imageContainer,
+  #carrusel,
+  #carrusel2,
+  #textContainer,
+  #bannersImgBlock,
+  #imageContainer2,
+  #BbIntroBlock,
+  #introText3,
+  #BbTitle,
+  #textContainer3,
+  #BbBlock,
+  #BbContainer,
+  #brandbook,
+  #laptopImgBlock,
+  #imageContainer3,
+  #laptop,
+  #papeleriaBlock,
+  #papeleriaContainer,
+  #papeleria {
+    max-width: 100%;
+  }
+}
