@@ -10,37 +10,47 @@
 <body>
 
 
-<!----- HTML -----> 
+
+
+<!-------------------------- SECCIÓN 1 -------------------------------> 
 <div id="header" alt="Desktop Header"></div>
 <div id="headerOverlay"></div>
 <div id="headerOverlay2"></div>
 <img id="logo" src="assets/images/beLive/logo.png"></img>
+<div id="loadingOverlay"></div>
+<button id="buttonback" class="color-change-button" onclick="window.location.href='index.html'">◀ Home</button>
 
-<div id="info">
+
+
+
+<!-------------------------- INFO CARD -------------------------------> 
+<div id="infoBL">
   <div id="clientInfo">
-    <div class="infoTitle">Client</div>
-    <div class="infoInfo">Editorial Santillana</div>
+    <div id="clientInfoTitle" class="infoTitle">Client</div>
+    <div id="clientInfoInfo" class="infoInfo">Editorial Santillana</div>
   </div>
   <div id="servicesInfo">
-    <div class="infoTitle">Areas</div>
-    <div class="infoInfo">Brand Identity Development, brandbook, examples</div>
+    <div id="servicesInfoTitle" class="infoTitle">Services Provided</div>
+    <div id="servicesInfoInfo" class="infoInfo">Visual Identity, Brandbook and Visualizations</div>
   </div>
   <div id="dateInfo">
-    <div class="infoTitle">Date</div>
-    <div class="infoInfo">2021</div>
+    <div id="dateInfoTitle" class="infoTitle">Date</div>
+    <div id="dateInfoInfo" class="infoInfo">2021</div>
   </div>
   <hr class="line1">
   <div id="overviewInfo">
-    <div class="infoInfo">The Be+Live brand identity project visually represents their innovative and holistic approach to English language education, combining experiential learning activities for solid intellectual, social, and emotional foundations. The project created a vibrant visual identity, including logos, typography, colors, and imagery, showcasing Be+Live as a leading force in revolutionizing English language education.</div>
+    <div class="infoInfo" id="overviewInfoInfo">The Be+Live brand identity project visually represents their innovative and holistic approach to English language education, combining experiential learning activities for solid intellectual, social, and emotional foundations. The project created a vibrant visual identity, including logos, typography, colors, and imagery, showcasing Be+Live as a leading force in revolutionizing English language education.</div>
   </div>
 </div>
 
+
+
+
+<!-------------------- DESARROLLO DE PROYECTO------------------------> 
 <div id="back">
-
-
   <div id="introBlock">
     <div id="imageContainer">
-      <img id="carrusel" src="assets/images/beLive/carrusel1.png">
+      <img id="carrusel" data-desktop="assets/images/beLive/carrusel1.png" data-mobile="assets/images/beLive/carrusel1Mobile.png">
     </div>
     <div id="textContainer">
       <div id="introText">
@@ -52,7 +62,7 @@
 
   <div id="bannersImgBlock">
     <div id="imageContainer2">
-      <img id="carrusel2" src="assets/images/beLive/banners.jpg">
+      <img id="carrusel2" src="assets/images/beLive/banners.png">
     </div>
   </div>
 
@@ -63,57 +73,58 @@
     </div>
     <div id="textContainer3">
       <div id="introText3">
-        The Brandbook is a comprehensive reference guide for graphic designers working with Be+Live's visual elements. It provides guidance for marketing, advertising, and editorial designers, as well as designers from partner schools. It outlines visual guidelines, ensuring consistency across all brand assets.
+        The Brandbook is a comprehensive reference guide for graphic designers working with Be+Live's visual elements. It provides guidance for marketing, advertising, and editorial designers, as well as designers from partner schools. It outlines visual guidelines, ensuring consistency across all brand assets. Below, you'll find a selection of pages:
       </div>
     </div>
   </div>
 
 
-  <div id="BbBlock">
+<div id="BbBlock">
   <div id="BbContainer">
-    <img id="brandbook" src="assets/images/beLive/brandbook1.png">
-    <img id="brandbook2" src="assets/images/beLive/brandbook2.png">
-    <img id="brandbook3" src="assets/images/beLive/brandbook3.png">
-    <img id="brandbook4" src="assets/images/beLive/brandbook4.png">
-    <img id="brandbook5" src="assets/images/beLive/brandbook5.png">
-    <img id="brandbook6" src="assets/images/beLive/brandbook6.png">
-    <img id="brandbook0" src="assets/images/beLive/brandbook0.png">
+    <img id="brandbook" data-desktop="assets/images/beLive/brandbook1.png" data-mobile="assets/images/beLive/brandbook1Mobile.png">
+    <img id="brandbook2" data-desktop="assets/images/beLive/brandbook2.png" data-mobile="assets/images/beLive/brandbook2Mobile.png">
+    <img id="brandbook3" data-desktop="assets/images/beLive/brandbook3.png" data-mobile="assets/images/beLive/brandbook3Mobile.png">
+    <img id="brandbook4" data-desktop="assets/images/beLive/brandbook4.png" data-mobile="assets/images/beLive/brandbook4Mobile.png">
+    <img id="brandbook5" data-desktop="assets/images/beLive/brandbook5.png" data-mobile="assets/images/beLive/brandbook5Mobile.png">
+    <img id="brandbook6" data-desktop="assets/images/beLive/brandbook6.png" data-mobile="assets/images/beLive/brandbook6Mobile.png">
+    <img id="brandbook0" data-desktop="assets/images/beLive/brandbook0.png" data-mobile="assets/images/beLive/brandbook0Mobile.png">
   </div>
   <button id="prevButton">◀</button>
   <button id="nextButton">▶</button>
 </div>
-  <div id="BbBack"> 
+<div id="BbBack"></div>
+
+<div id="laptopImgBlock">
+  <div id="imageContainer3">
+    <img id="laptop" data-desktop="assets/images/beLive/laptop.png" data-mobile="assets/images/beLive/laptopMobile.png">
   </div>
-
-
-  <div id="laptopImgBlock">
-    <div id="imageContainer3">
-      <img id="laptop" src="assets/images/beLive/laptop.png">
-    </div>
-  </div>
-
-
-  <div id="papeleriaBlock">
-    <div id="papeleriaContainer">
-      <img id="papeleria" src="assets/images/beLive/papeleria.png">
-    </div>
-  </div>
-  <div id="papeleriaBack"></div>
 </div>
 
-<button id="buttonback" class="color-change-button" onclick="window.location.href='main.html'">◀ Go Home</button>
+<div id="papeleriaBlock">
+  <div id="papeleriaContainer">
+    <img id="papeleria" data-desktop="assets/images/beLive/papeleria.png" data-mobile="assets/images/beLive/papeleriaMobile.png">
+  </div>
+</div>
+<div id="papeleriaBack"></div>
+</div>
 
 
 
 
+<!----------------------------- JAVASCRIPT---------------------------------> 
+<script src="belive.js"></script>
+<script src="languageSwitch.js"></script>
+
+
+
+
+<!----------------------------- MOUSE---------------------------------> 
 <div class="custom-ellipse">
   <span></span>
 </div>
 <div class="custom-ellipse2">
   <span></span>
 </div>
-<script src="belive.js"></script>
-
 <script>
   const cursor = document.querySelector(".custom-ellipse");
   const cursor2 = document.querySelector(".custom-ellipse2");

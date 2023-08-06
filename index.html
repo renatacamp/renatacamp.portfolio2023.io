@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Renata Campuzano</title>
+<link rel="stylesheet" href="main.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+</head>
+<body class="loader-active">
+
+
+
+
+<!----- THREE ----->
+<script type="importmap">
+  {
+    "imports": {
+      "three": "/three/build/three.module.js",
+      "GLTFLoaderPath": "/three/examples/jsm/loaders/GLTFLoader.js",
+      "RGBELoaderPath": "/three/examples/jsm/loaders/RGBELoader.js",
+      "OrbitControlsPath": "/three/examples/jsm/controls/OrbitControls.js"
+    }
+  }
+</script>
+<script src="sketchThree.js" type="module"></script>
+<div id="canvas"></div>
+<div id="back"></div>
+<div id="backOverlay"></div>
+
+
+
+<div id="loader" class="color-change-button3">
+  <div id="loaderDesignContainer">
+        <div id="loaderAnim"></div>
+        <div id="loading-text">0%</div>
+        <div id="loaderLine"></div>
+  </div>      
+</div>
+
+
+<!-------------------------- SECCIÓN 1 -------------------------------> 
+<button id="buttonLanguage" class="color-change-button">English / Español</button>
+<button id="buttonContact" class="color-change-button">Contact</button>
+<button id="buttonAbout" class="color-change-button">About Me</button>
+
+<div class="name">Renata</div>
+<div class="name2">Campuzano</div>
+<div id="info">Through technology and design, creativity finds its perfect canvas in a digital world, with solutions: web design.</div>
+<button id="buttonPortfolio" class="color-change-button">Portfolio</button>
+
+
+
+<div id="line1"></div>
+<div id="line2"></div>
+<div id="line3"></div>
+<div id="line4"></div>
+<div id="line5"></div>
+<div id="line6"></div>
+<div id="line7"></div>
+<div id="line8"></div>
+<div id="line9"></div>
+<div id="dot1"></div>
+
+
+
+
+<!-------------------------- PORTAFOLIO -------------------------------> 
+<div id="card1" class="color-change-button4" onclick="delayedPageChange('belive.html')">
+    <img id="vid1" src="assets/images/be+live.jpg"></img>
+    <hr id="lineC1">
+    <div id="text-container">
+        <div id="button-container">
+            <button id="seeProyect1">See <br> Project</button>
+        </div>
+        <div id="text-content">
+            <div id="myH1">Be+Live</div>
+            <div id="myG1">3D Render - Brand Identity</div>
+        </div>
+    </div>
+</div>
+
+<div id="card2" class="color-change-button4" onclick="window.location.href='belive.html'">
+    <img id="vid2" src="assets/images/mixed2.png"></img>
+    <hr id="lineC2">
+    <div id="text-container">
+        <div id="button-container">
+            <button id="seeProyect2">See <br> Project</button>
+        </div>
+        <div id="text-content">
+            <div id="myH2">Mixed</div>
+            <div id="myG2">3D Render - Brand Identity</div>
+        </div>
+    </div>
+</div>
+
+<div id="card3" class="color-change-button4" onclick="window.location.href='belive.html'">
+    <img id="vid3" src="assets/images/mixed1.png"></img>
+    <hr id="lineC3">
+    <div id="text-container">
+        <div id="button-container">
+            <button id="seeProyect3">See <br> Project</button>
+        </div>
+        <div id="text-content">
+            <div id="myH3">Mixed</div>
+            <div id="myG3">3D Render - Brand Identity</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-------------------------- SECCIÓN FINAL-------------------------------> 
+<div id = "letsWork">
+  <div> LET'S WORK</div>
+  <button id="contactar" class="color-change-button">Contactar</button>
+</div> 
+
+<div id="footer">
+</div>
+
+
+<div id="transitionContainer">
+   <div id="transitions">
+   </div>
+</div>
+
+
+
+
+
+<!---------------------------- JAVASCRIPT-----------------------------> 
+<script src="main.js"></script>
+<script src="languageSwitch.js"></script>
+
+
+
+
+
+<!----------------------------- MOUSE---------------------------------> 
+<div class="custom-ellipse">
+  <span></span>
+</div>
+<div class="custom-ellipse2">
+  <span></span>
+</div>
+<div class="custom-ellipse3">
+  <span></span>
+</div>
+<div class="custom-ellipse4">
+  <span></span>
+</div>
+<script>
+  const cursor = document.querySelector(".custom-ellipse");
+
+  //HOVER1
+  const cursor2 = document.querySelector(".custom-ellipse2");
+  const colorChangeButtons = document.querySelectorAll(".color-change-button");
+  
+  colorChangeButtons.forEach(button => {
+    button.addEventListener("mouseover", function() {
+      cursor2.classList.add("custom-ellipse2-hover");
+    });
+  
+    button.addEventListener("mouseout", function() {
+      cursor2.classList.remove("custom-ellipse2-hover");
+    });
+  });
+
+  //HOVER3
+  const cursor3 = document.querySelector(".custom-ellipse3");
+  const colorChangeButtons3 = document.querySelectorAll(".color-change-button3");
+  
+  colorChangeButtons3.forEach(button => {
+    button.addEventListener("mouseover", function() {
+      cursor3.classList.add("custom-ellipse3-hover");
+    });
+  
+    button.addEventListener("mouseout", function() {
+      cursor3.classList.remove("custom-ellipse3-hover");
+    });
+  });
+
+  //HOVER4
+  const cursor4 = document.querySelector(".custom-ellipse4");
+  const colorChangeButtons4 = document.querySelectorAll(".color-change-button4");
+  
+  colorChangeButtons4.forEach(button => {
+    button.addEventListener("mouseover", function() {
+      cursor4.classList.add("custom-ellipse4-hover");
+    });
+  
+    button.addEventListener("mouseout", function() {
+      cursor4.classList.remove("custom-ellipse4-hover");
+    });
+  });
+  
+  function updateCursorPosition(event) {
+    cursor.style.left = event.clientX + "px";
+    cursor.style.top = event.clientY + "px";
+    cursor2.style.left = event.clientX + "px";
+    cursor2.style.top = event.clientY + "px";
+    cursor3.style.left = event.clientX + "px";
+    cursor3.style.top = event.clientY + "px";
+    cursor4.style.left = event.clientX + "px";
+    cursor4.style.top = event.clientY + "px";
+  }
+  
+  document.addEventListener("mousemove", updateCursorPosition);
+  </script>
+
+
+
+
+
+  <!----------------------------- LANGUAGE---------------------------------> 
+  <script>
+  document.getElementById("buttonLanguage").addEventListener("click", function() {
+    // Check the current language
+    var currentLanguage = document.documentElement.lang || "en";
+    // Toggle between English and Spanish
+    var newLanguage = currentLanguage === "en" ? "es" : "en";
+    // Save the new language to local storage
+    localStorage.setItem("selectedLanguage", newLanguage);
+    // Set the language on the page
+    setLanguage(newLanguage);
+  });
+
+  // Add an event listener to the "Contact" button to navigate to the subpage
+  document.getElementById("buttonContact").addEventListener("click", function() {
+    var currentLanguage = document.documentElement.lang || "en";
+    // Navigate to the subpage, passing the selected language as a query parameter
+    window.location.href = "subpage.html?lang=" + currentLanguage;
+  });
+</script>
+</body>
+</html>

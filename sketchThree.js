@@ -13,31 +13,31 @@ let w = window.innerWidth;
 let w1 = w / 100;
 
 const cameraTrajectory1 = [
-  { position: new THREE.Vector3(7.5, 3.5, 9), rotation: new THREE.Euler(0, 0, 0), length: 100},
-  { position: new THREE.Vector3(-7, 5, 8.5), rotation: new THREE.Euler(0, Math.PI * 0.4, 0), length: 60 },
-  { position: new THREE.Vector3(-14, 11, 5), rotation: new THREE.Euler(0, Math.PI * 0.8, 0), length: 45 },
-  { position: new THREE.Vector3(-5, 8, 8), rotation: new THREE.Euler(0, Math.PI * 1.1, 0), length: 70 },
+  { position: new THREE.Vector3(7.5, 3.5, 9), rotation: new THREE.Euler(0, 0, 0), length: 90},
+  { position: new THREE.Vector3(-6, 4.5, 9), rotation: new THREE.Euler(0, Math.PI * 0.4, 0), length: 50 },
+  { position: new THREE.Vector3(-12, 11, 5), rotation: new THREE.Euler(0, Math.PI * 0.8, 0), length: 55 },
+  { position: new THREE.Vector3(-6, 8.5, 8), rotation: new THREE.Euler(0, Math.PI * 1.1, 0), length: 70 },
 ];
 
 const cameraTrajectory2 = [
-  { position: new THREE.Vector3(7.5, 3.5, 9), rotation: new THREE.Euler(0, 0, 0), length: 86 },
-  { position: new THREE.Vector3(-7, 5, 8.5), rotation: new THREE.Euler(0, Math.PI * 0.4, 0), length: 60 },
-  { position: new THREE.Vector3(-13, 11, 5), rotation: new THREE.Euler(0, Math.PI * 0.8, 0), length: 60 },
-  { position: new THREE.Vector3(-5, 8, 8), rotation: new THREE.Euler(0, Math.PI * 1.1, 0), length: 70 },
+  { position: new THREE.Vector3(6, 3.5, 9), rotation: new THREE.Euler(0, 0, 0), length: 100 },
+  { position: new THREE.Vector3(-6, 4, 8.5), rotation: new THREE.Euler(0, Math.PI * 0.4, 0), length: 50 },
+  { position: new THREE.Vector3(-13, 11, 5), rotation: new THREE.Euler(0, Math.PI * 0.8, 0), length: 65 },
+  { position: new THREE.Vector3(-6, 8, 8), rotation: new THREE.Euler(0, Math.PI * 1.1, 0), length: 50 },
 ];
 
 const cameraTrajectory3 = [
   { position: new THREE.Vector3(0, 4, 12), rotation: new THREE.Euler(0, 0, 0), length: 100 },
-  { position: new THREE.Vector3(-5, 5, 7), rotation: new THREE.Euler(0, Math.PI * 0.4, 0), length: 65 },
-  { position: new THREE.Vector3(-12, 11, 5), rotation: new THREE.Euler(0, Math.PI * 0.8, 0), length: 65 },
+  { position: new THREE.Vector3(-5, 6, 6.5), rotation: new THREE.Euler(0, Math.PI * 0.45, 0), length: 50 },
+  { position: new THREE.Vector3(-11, 10, 8), rotation: new THREE.Euler(0, Math.PI * 0.8, 0), length: 75 },
   { position: new THREE.Vector3(-7, 7, 8), rotation: new THREE.Euler(0, Math.PI * 1.1, 0), length: 70 },
 ];
 
 const cameraTrajectory4 = [
-  { position: new THREE.Vector3(1, 6, 16), rotation: new THREE.Euler(0, 0, 0), length: 85 },
-  { position: new THREE.Vector3(-3, 5, 6), rotation: new THREE.Euler(0, Math.PI * 0.4, 0), length: 110 },
-  { position: new THREE.Vector3(-10, 12.5, 5), rotation: new THREE.Euler(0, Math.PI * 0.8, 0), length: 65 },
-  { position: new THREE.Vector3(-8, 10, 8), rotation: new THREE.Euler(0, Math.PI * 1.1, 0), length: 70 },
+  { position: new THREE.Vector3(1, 6, 16), rotation: new THREE.Euler(0, 0, 0), length: 80 },
+  { position: new THREE.Vector3(-3, 5, 6), rotation: new THREE.Euler(0, Math.PI * 0.4, 0), length: 40 },
+  { position: new THREE.Vector3(-10, 9, 5), rotation: new THREE.Euler(0, Math.PI * 0.8, 0), length: 70 },
+  { position: new THREE.Vector3(-8, 7, 8), rotation: new THREE.Euler(0, Math.PI * 1.1, 0), length: 70 },
 ];
 
 init();
@@ -81,7 +81,7 @@ function modelSettings() {
     scene.add(model);
     model.rotation.set(0, -1.7, 0);
     const newMaterial = new THREE.MeshLambertMaterial({ color: '#F00', emissive: '#0FF', emissiveIntensity: '25' });
-    model.children[16].traverse((o) => {
+    model.children[50].traverse((o) => {
       if (o.isMesh) o.material = newMaterial;
     });
 

@@ -8,12 +8,32 @@ body {
   font-size: 40px;
   margin: 0;
   width: 100%;
-  height: 250vh;
+  height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   background-color: #E3D1C3;
 }
+
+
+  #loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    pointer-events: none; 
+    opacity: 1; 
+    transition: opacity 1s ease; 
+  }
+
+
+  #loadingOverlay.loaded {
+    opacity: 0;
+  }
+
 
 /* Define the custom cursor */
 .custom-ellipse2 {
@@ -21,7 +41,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 12;
+  z-index: 50;
   width: 20px;
   height: 20px;
   pointer-events: none;
@@ -53,18 +73,25 @@ body {
 
 #buttonback {
   cursor: none;
-  height: 40px;
-  width: 140px;
+  height: 35px;
+  width: 120px;
   background-color: #ffffff;
   border-radius: 30px;
   border: none;
-  z-index: 10;
-  top: 0;
-  left: 0;
+  z-index: 10 !important;
+  top: 1vw;
+  left: 1vw;
   position: fixed;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
+}#buttonback:before{
+  transform: scaleY(0);
+  transform-origin: 0 100%;
+  transition: transform 0.3s ease-out;
+}#buttonback:hover{
+  color: #99268F;
+  font-weight: 600;
 }
 
 /*--------------------Header-------------------- */
@@ -113,7 +140,7 @@ body {
 
 /*----------------Infromation----------------- */
 
-#info {
+#infoBL {
   height: 320px;
   width: 98%;
   background-color: #ffffff;
@@ -129,7 +156,7 @@ hr.line1 {
 }
 
 #back {
-  height: 4500px;
+  height: 4250px;
   width: 100%;
   background-color: #ffffff;
   z-index: -1;
@@ -210,7 +237,7 @@ hr.line1 {
 #carrusel {
   width: 100%;
   border-radius: 25px;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.25s ease;
 }
 
@@ -413,8 +440,8 @@ hr.line1 {
 }
 
 #papeleriaContainer {
-  width: 1350px;
-  height: 800px;
+  width: 1250px;
+  height: 600px;
 }
 
 #papeleria {
@@ -426,12 +453,10 @@ hr.line1 {
   position: absolute;
   width: 100%;
   top: 3200px;
-  background-color: #e7d7c2;
-  height: 655px;
+  background-color: #c1ac9a;
+  height: 710px;
   z-index: -15;
 }
-
-
 
 
 
@@ -444,7 +469,7 @@ hr.line1 {
 
 /*----------------Infromation----------------- */
 
-  #info {
+  #infoBL {
   top: 50vw;
   height:27vw;
   }
@@ -458,34 +483,43 @@ hr.line1 {
   }
 
   #back {
-  height:300vw;
+  height:330vw;
   width: 100%;
   top: 78vw;
   }
 
   #clientInfo {
   right: 50vw;
-  top: 7vw;
+  top: 5.5vw;
   width: 38.5vw;
   }
 
   #servicesInfo {
-  top: 13.8vw;
+  top: 17.3vw;
   right: 50vw;
   width: 38.5vw;
   }
 
   #dateInfo {
-  top: 7vw;
+  top: 5.5vw;
   right: 50vw;
-  width: 20.5vw;
+  width: 16vw;
   }
 
   #overviewInfo {
-  top: 7vw;
+  top: 5.5vw;
   left: 47vw;
   width: 43vw;
   }
+
+  #buttonback {
+  height: 2.5vw;
+  width: 7.5vw;
+  border-radius: 30px;
+  top: 1vw;
+  left: 1vw;
+  font-size: 1.3vw;
+}
 
   
 /*----------------Introducción----------------- */
@@ -534,7 +568,7 @@ hr.line1 {
 /*------Introducción Brandbook------- */
 
   #BbIntroBlock {
-  top: 97vw;
+  top: 100vw;
   }
 
   #introText3 {
@@ -544,7 +578,7 @@ hr.line1 {
   #BbTitle {
   font-size: 4.5vw;
   width: 30vw;
-  padding-bottom: 6vw; 
+  padding-bottom: 7.5vw; 
   }
 
   #textContainer3 {
@@ -555,7 +589,7 @@ hr.line1 {
 /*-------------Brandbook------------- */
 
   #BbBlock {
-  top: 115vw;
+  top: 121vw;
   }
 
   #BbContainer {
@@ -594,7 +628,7 @@ hr.line1 {
 /*----------------Laptop----------------- */
 
   #laptopImgBlock {
-  top: 170vw;
+  top: 176vw;
   }
 
   #imageContainer3 {
@@ -610,11 +644,11 @@ hr.line1 {
 /*-------------Papeleria-------------- */
 
   #papeleriaBlock {
-  top: 225vw;
+  top: 233vw;
   }
 
   #papeleriaContainer {
-  width: 100vw;
+  width: 120vw;
   }
 
   #papeleria{
@@ -624,9 +658,49 @@ hr.line1 {
   #papeleriaBack {
   display: none;
   }
+
+    
+  #infoBL,
+  #back,
+  #servicesInfo,
+  #dateInfo,
+  #overviewInfo,
+  #introBlock,
+  #imageContainer,
+  #carrusel,
+  #carrusel2,
+  #textContainer,
+  #bannersImgBlock,
+  #imageContainer2,
+  #BbIntroBlock,
+  #introText3,
+  #BbTitle,
+  #textContainer3,
+  #laptopImgBlock,
+  #imageContainer3,
+  #laptop  
+  #info,
+  #back,
+  #servicesInfo,
+  #dateInfo,
+  #overviewInfo,
+  #introBlock,
+  #imageContainer,
+  #carrusel,
+  #carrusel2,
+  #textContainer,
+  #bannersImgBlock,
+  #imageContainer2,
+  #BbIntroBlock,
+  #introText3,
+  #BbTitle,
+  #textContainer3,
+  #laptopImgBlock,
+  #imageContainer3,
+  #laptop{
+    max-width: 100%;
+  } 
 }
-
-
 
 
 @media screen and (orientation:portrait) {
@@ -646,9 +720,19 @@ left: 0vw;
 top: 70vw;
 }
 
+  #buttonback {
+  height: 4vw;
+  width: 8vw;
+  border-radius: 30px;
+  top: 1vw;
+  left: 2vw;
+  font-size: 1.5vw;
+}
+
+
 /*----------------Infromation----------------- */
 
-  #info {
+  #infoBL {
   top: 87vw;
   height:45vw;
   width: 97%;
@@ -656,7 +740,7 @@ top: 70vw;
   }
 
   .infoTitle {
-  font-size:18px;
+  font-size:2.4vw;
   }
 
   .infoInfo {
@@ -672,7 +756,7 @@ top: 70vw;
   }
 
   #back {
-  height:500vw;
+  height:380vw;
   width: 100%;
   top: 134.5vw;
   }
@@ -790,20 +874,20 @@ top: 70vw;
   #prevButton,
 #nextButton {
   top: 23vw;
-  border-radius: 2vw;
-  height: 3vw;
-  width: 3vw;
+  border-radius: 3vw;
+  height: 4.5vw;
+  width: 4.5vw;
 }
 
 #prevButton {
-  left: 21vw;
-  font-size: 1.5vw;
+  left: 20vw;
+  font-size: 2vw;
   padding-right: .75vw;
 }
 
 #nextButton {
-  right: 21vw;
-  font-size: 1.5vw;
+  right: 20vw;
+  font-size: 2vw;
   padding-left: .75vw;
 }
 
@@ -831,7 +915,7 @@ top: 70vw;
   }
 
   #papeleriaContainer {
-  width: 100vw;
+  width: 120vw;
   }
 
   #papeleria{
@@ -840,6 +924,28 @@ top: 70vw;
 
   #papeleriaBack {
   display: none;
+  }
+
+  #infoBL,
+  #back,
+  #servicesInfo,
+  #dateInfo,
+  #overviewInfo,
+  #introBlock,
+  #imageContainer,
+  #carrusel,
+  #carrusel2,
+  #textContainer,
+  #bannersImgBlock,
+  #imageContainer2,
+  #BbIntroBlock,
+  #introText3,
+  #BbTitle,
+  #textContainer3,
+  #laptopImgBlock,
+  #imageContainer3,
+  #laptop {
+    max-width: 100%;
   }
 
 
@@ -889,9 +995,18 @@ top: 70vw;
   display: none;
 }
 
+  #buttonback {
+  height: 10vw;
+  width: 20vw;
+  border-radius: 30px;
+  top: 3vw;
+  left: 3vw;
+  font-size: 3.4vw;
+}
+
   /*----------------Infromation----------------- */
 
-  #info {
+  #infoBL {
     top: 145vw;
     height: 128vw;
     width: 95%;
@@ -915,7 +1030,7 @@ top: 70vw;
   }
 
   #back {
-    height: 650vw;
+    height: 605vw;
     width: 100%;
     top: 276vw;
   }
@@ -1022,7 +1137,7 @@ top: 70vw;
   /*-------------Brandbook------------- */
 
   #BbBlock {
-    top: 284vw;
+    top: 289vw;
   }
 
   #BbContainer {
@@ -1061,7 +1176,7 @@ top: 70vw;
   /*----------------Laptop----------------- */
 
   #laptopImgBlock {
-    top: 365vw;
+    top: 370vw;
   }
 
   #imageContainer3 {
@@ -1077,7 +1192,7 @@ top: 70vw;
   /*-------------Papeleria-------------- */
 
   #papeleriaBlock {
-    top: 452vw;
+    top: 456vw;
   }
 
   #papeleriaContainer {
@@ -1094,7 +1209,7 @@ top: 70vw;
 
 
   
-  #info,
+  #infoBL,
   #back,
   #servicesInfo,
   #dateInfo,
